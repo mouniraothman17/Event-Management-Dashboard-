@@ -1,0 +1,49 @@
+<div class="header-container">
+  <div class="date-search">
+    <div class="date">{{ currentDate | date:'MMM d, y' }}</div>
+
+    <div class="search-wrapper">
+      <input class="search-input"
+             type="text"
+             placeholder="Search..."
+             [formControl]="searchControl">
+      <span><img class="search-icon" src="../../../assets/search.png" alt=""></span>
+    </div>
+  </div>
+</div>
+
+<app-sidebar></app-sidebar>
+
+<div class="full-container">
+  <h3>All Users List</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone no</th>
+        <th>Email</th>
+        <th>Verified</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let attendee of attendees; let i = index">
+        <td>{{ attendee.name }}</td>
+        <td>{{ attendee.phone  }}</td>
+        <td>{{ attendee.email }}</td>
+        <td>
+          <span [ngClass]="attendee.isVerified ? 'verified' : 'not-verified'">
+            {{ attendee.isVerified ? 'Yes' : 'No' }}
+          </span>
+        </td>
+        <td>
+         <button (click)="deleteAttendee(i)" class="delete-btn">
+  <img src="../../assets/bascket.png" alt="delete">
+</button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

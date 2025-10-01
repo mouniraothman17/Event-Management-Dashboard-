@@ -1,0 +1,46 @@
+<div class="event-card">
+  <div class="event-image">
+    <img [src]="event.image" alt="Event image" />
+    <a [routerLink]="['/events', event.id]" class="details-link">More details ›</a>
+  </div>
+
+  <div class="event-content">
+    <div class="heart">
+      <h3 class="title">{{ event.name }}</h3>
+    </div>
+
+    <p class="subtitle interest-tag">
+      {{ event.interest  }}
+    </p>
+
+
+
+
+    <div class="info-row">
+     <div>
+       <span class="icon"><img src="../../assets/location.png" alt=""></span>
+      <span>{{ eventLocationName || 'loading...' }}</span>
+
+     </div>
+     <div class="time-info">
+      <div>
+     <span class="icon"><img src="../../assets/calendar-detail.png" alt=""></span>
+      <span>{{ event.date | date:'mediumDate' }}</span>
+     </div>
+    <div>
+        <span class="icon-time"><img src="../../assets/alarm.png" alt=""></span>
+        <span class="subtitle">{{ event.time }}</span>
+    </div>
+     </div>
+    </div>
+
+    <div class="bottom-row">
+      <span>Attendees: {{ event.attendeesRate || 0 }}</span>
+      <div class="footer-item">
+        <span class="status" [ngClass]="{ sold: event.status === 'Sold' }">
+          {{ event.status || 'Available' }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

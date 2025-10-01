@@ -1,0 +1,69 @@
+app-header{
+  position: fixed;
+  top: 0;
+  width: 78%;
+}
+.container-home{
+  margin-top: 70px
+}
+.date {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.search-bar {
+  padding: 10px 16px;
+  border-radius: 24px;
+  border: 1px solid #ddd;
+  width: 240px;
+  font-size: 14px;
+}
+
+.metrics-summary {
+  margin-bottom: 20px;
+  width: 65% !important;
+}
+
+.home-content-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.right-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.spinner {
+  width: 45px;
+  height: 45px;
+  border: 5px solid #e0e0e0;
+  border-top: 5px solid #0b3d59;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

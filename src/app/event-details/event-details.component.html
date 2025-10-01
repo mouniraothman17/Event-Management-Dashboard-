@@ -1,0 +1,51 @@
+<app-sidebar></app-sidebar>
+    <div class="date"> {{ currentDate | date:'MMM d, y' }}</div>
+
+<div class="container" *ngIf="event">
+
+  <div class="event-details-container">
+
+    <div class="event-banner">
+    <img class="img-event" [src]="event?.image || 'assets/default-event.png'" alt="Event Image" />
+<div class="details">
+
+<div class="name-like-con">
+      <h2 class="event-title">{{ event?.name }}</h2>
+</div>
+      <p class="event-description">{{ event?.description }}</p>
+
+     <div class="date-loc">
+       <span *ngIf="event?.location?.coordinates">
+
+  <div class="text-sm text-gray-600 full-loc" *ngIf="fullLocationName">
+  <img class="location-icon" src="../../assets/location.png" alt=""> {{ fullLocationName }}
+  </div>
+
+
+      </span>
+      <span><img src="../../assets/calendar-detail.png" alt="" class="date-image"> {{ event?.date | date }} <img class="clock" src="../../assets/alarm.png" alt="">{{event.time}}</span>
+    </div>
+    <div class="price">
+      <p class="event-price">Price : {{ event?.price }}$</p>
+      <p class="event-price">Tickets avilable : {{ event?.tickets }}</p>
+    </div>
+     </div>
+
+
+</div>
+  </div>
+
+
+
+<div class="charts">
+  <app-attendee-rate [eventId]="event?.id!"></app-attendee-rate>
+
+    <div class="location-map">
+      <h4><img style="height: 35px; width: 35px; margin-bottom: 6px;" src="../../assets/location.png" alt=""> Location</h4>
+      <div id="map" style="height: 200px; border-radius: 10px;"></div>
+    </div>
+
+</div>
+</div>
+
+

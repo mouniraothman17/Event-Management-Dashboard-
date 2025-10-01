@@ -1,0 +1,136 @@
+app-header{
+  position: fixed;
+  top: 0;
+  width: 78%;
+  z-index: 1;
+}
+
+
+.new-event-button {
+  background: linear-gradient(to right, #0f3c56, #114d66);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  padding: 15px 24px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.new-event-button img{
+  margin-right: 5px;
+  width: 15px ;
+  height: 15px;
+}
+
+.new-event-button:hover {
+  background: linear-gradient(to right, #0d344c, #0e4257);
+}
+
+.events-container{
+  margin-top: 60px;
+  margin-bottom: 50px;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns:repeat(3,1fr) ;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7px;
+  gap: 12px;
+  font-family: 'Segoe UI', sans-serif;
+  position: fixed;
+  bottom: 2px;
+  right:40%;
+}
+
+.pagination button {
+  background-color: #0f3c56;
+  border: none;
+  color: #fff;
+  padding: 4px 14px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #0f3c56;
+  transform: translateY(-2px);
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.pagination span {
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+}
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  position: fixed;
+  top: 40%;
+  right: 40%;
+}
+
+.spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #0f3c56;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.container-fil-mat{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5px;
+  flex-wrap: wrap;
+}
+
+.filters select,
+.filters input {
+  padding: 5px 5px;
+  font-size: 13px;
+  height: 30px;
+  width:fit-content;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  color: #555;
+
+}

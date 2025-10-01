@@ -1,0 +1,53 @@
+.attendee-rate-card {
+  background-color: white;
+  width: 100%;
+  border-radius: 12px;
+  padding:27px 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.attendee-rate-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+canvas{
+  width: 45% !important;
+  height: 45% !important;
+}
+.attendee-rate-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+.content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chart-header {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.chart-header span{
+  color: rgba(137, 137, 137, 1);
+}
+.info{
+color: rgba(137, 137, 137, 1);
+margin-right: 50px;
+}
+
+.attendee-rate-center-text {
+  position: absolute;
+  top: -15%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: #0077cc;
+}

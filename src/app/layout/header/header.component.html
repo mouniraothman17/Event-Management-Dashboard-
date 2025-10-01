@@ -1,0 +1,16 @@
+<div class="header-container">
+  <div class="date-search">
+    <div class="date"> {{ currentDate | date:'MMM d, y' }}</div>
+
+  <div class="search-wrapper">
+  <input class="search-input"
+  type="text"
+  placeholder="Search..."
+ [(ngModel)]="searchQuery"
+   (keyup)="handleKey($event)">
+
+  <span ><img  class="search-icon" src="../../../assets/search.png" alt=""></span>
+</div>
+
+</div>
+</div>

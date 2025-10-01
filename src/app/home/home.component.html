@@ -1,0 +1,36 @@
+<app-header></app-header>
+
+<div class="container-home">
+  <app-sidebar></app-sidebar>
+
+
+  <div *ngIf="loading" class="loader-container">
+    <div class="spinner"></div>
+    <span>Loading events...</span>
+  </div>
+
+
+  <div *ngIf="!loading">
+    <div class="metrics-summary">
+      <app-metrics-summary (eventCreated)="handleNewEvent($event)"></app-metrics-summary>
+    </div>
+
+    <div class="home-content-layout">
+      <div class="left-section">
+        <div class="events-section">
+          <app-events-section></app-events-section>
+        </div>
+
+        <div class="attendees-section">
+          <app-attendees-list></app-attendees-list>
+        </div>
+      </div>
+
+      <div class="right-section">
+        <app-charts-section></app-charts-section>
+   <app-attendee-rate [fromHome]="true"></app-attendee-rate>
+
+      </div>
+    </div>
+  </div>
+</div>

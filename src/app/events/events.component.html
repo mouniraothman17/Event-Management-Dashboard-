@@ -1,0 +1,51 @@
+<div class="events-container">
+  <app-sidebar></app-sidebar>
+<app-header ></app-header>
+
+<div class="container-fil-mat">
+
+<div class="filters">
+  <select [(ngModel)]="filters.interest" (change)="applyFilters()">
+    <option value="">All Interests</option>
+    <option value="sport">Sport</option>
+    <option value="music">Music</option>
+    <option value="art">Art</option>
+    <option value="food">Food</option>
+
+  </select>
+
+  <select [(ngModel)]="filters.province" (change)="applyFilters()">
+    <option value="">All Provinces</option>
+    <option value="homs">Homs</option>
+    <option value="hama">Hama</option>
+    <option value="damascus">Damascus</option>
+    <option value="aleppo">Aleppo</option>
+  </select>
+
+
+  <input type="number" [(ngModel)]="filters.priceMax" placeholder="Max Price" (input)="applyFilters()" />
+
+  <input type="date" [(ngModel)]="filters.date" (change)="applyFilters()" />
+</div>
+     <button class="new-event-button"  color="primary" (click)="openAddEventDialog()" >
+   <img src="../../../../assets/plus-icon.svg" alt=""> Create Event</button >
+</div>
+
+<div *ngIf="loading" class="loader-container">
+  <div class="spinner"></div>
+  <span>Loading events...</span>
+</div><div class="events-grid" *ngIf="!loading">
+  <app-event-card
+    *ngFor="let event of filteredEvents"
+    [event]="event"
+    [filterProvince]="filters.province">
+  </app-event-card>
+</div>
+
+<div class="pagination" *ngIf="pagination && showPagination">
+  <button (click)="prevPage()" [disabled]="currentPage === 1">Prev</button>
+  <span>Page {{currentPage}} of {{pagination.totalPages}}</span>
+  <button (click)="nextPage()" [disabled]="currentPage === pagination.totalPages">Next</button>
+</div>
+
+</div>

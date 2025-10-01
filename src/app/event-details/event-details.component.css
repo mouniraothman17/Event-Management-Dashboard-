@@ -1,0 +1,126 @@
+.container{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #5c5656;
+}
+.event-details-container {
+  background-color: #f4f4f4;
+
+  padding:0px ;
+
+  padding-bottom: 0;
+  border-radius: 12px;
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.details{
+  padding: 20px;
+}
+.date {
+  font-weight: 500;
+  font-size: 28px;
+  color: #333;
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+
+.name-like-con ,.date-loc ,.price{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+.date-loc ,.price{
+color: #1c758b;
+font-weight: 500;
+
+}
+.full-loc{
+width: 400px;
+}
+.location-cont{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.event-banner {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+.clock{
+  margin-left: 20px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.img-event{
+   width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.charts{
+  display: flex;
+  flex-direction: column;
+  gap: 20px !important;
+
+}
+.location-map {
+  background-color: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  width: 300px;
+  height: 300px;
+}
+
+
+.likes-tag {
+  background-color: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+.event-info {
+  background-color: white;
+  border-radius: 14px;
+  width: 80%;
+}
+
+.location-date {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: #2ca6c6;
+  margin-bottom: 10px;
+}
+.location-icon , .date-image{
+  width: 24px !important;
+  height: 24px !important;
+  margin-bottom: 10px;
+}
+.event-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #222;
+}
+
+.event-description {
+  width: 500px;
+ white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  max-height: 4.5em;
+  overflow: hidden;
+}

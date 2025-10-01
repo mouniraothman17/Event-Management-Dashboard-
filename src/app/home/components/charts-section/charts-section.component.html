@@ -1,0 +1,22 @@
+<div class="charts-container">
+<div class="chart-card">
+  <div class="chart-header">Events by Province<span>This year</span></div>
+
+  <canvas baseChart
+    [data]="{ labels: bookingLabels, datasets: bookingData }"
+    [options]="bookingOptions"
+    chartType="bar">
+  </canvas>
+</div>
+
+
+<div class="chart-card">
+  <div class="chart-header">
+   Event Distribution by Month<span>This year</span>
+  </div>
+  <div class="ticket-sale-chart">
+     <canvas id="Revenue" width="400" height="300"></canvas>
+  </div>
+</div>
+
+</div>

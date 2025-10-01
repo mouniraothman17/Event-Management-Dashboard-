@@ -1,0 +1,26 @@
+<div class="preview-container">
+  <div class="more-link">
+  <h3>All Attendees List</h3>
+    <a routerLink="/attendees">More details ></a>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone no</th>
+        <th>Event</th>
+        <th>Date</th>
+        <th>Seats</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let attendee of attendees">
+        <td>{{ attendee.name }}</td>
+        <td>{{ attendee.phone }}</td>
+        <td>{{ attendee.event }}</td>
+        <td>{{ attendee.bookedDate }}</td>
+        <td>{{ attendee.seats }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

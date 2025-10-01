@@ -1,0 +1,19 @@
+<div class="metrics-container">
+   <div class="metric-card">
+  <p class="metric-title">Total earning</p>
+  <h2 class="metric-value">{{ totalEarnings !== null ? totalEarnings : '...' }} $</h2>
+</div>
+<div class="metric-card">
+  <p class="metric-title">Total users</p>
+  <h2 class="metric-value">{{ totalUsers !== null ? totalUsers : '...' }}</h2>
+</div>
+<div class="metric-card">
+  <p class="metric-title">Total events</p>
+  <h2 class="metric-value">{{ totalEvents !== null ? totalEvents : '...' }}</h2>
+</div>
+
+<div>
+    <button class="new-event-button"  color="primary" (click)="openAddEventDialog()">
+   <img src="../../../../assets/plus-icon.svg" alt=""><br> Create Event</button >
+</div>
+</div>

@@ -1,0 +1,66 @@
+.head-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+}
+
+
+
+.head-box app-header {
+width: 80%;
+
+}
+.head-box button{
+  width: 20%;
+}
+:host ::ng-deep .fc-toolbar {
+  background-color: #eee;
+  color: #0a3d62;
+  padding: 10px;
+  border-radius: 8px 8px 0 0;
+}
+
+:host ::ng-deep .fc-toolbar-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+:host ::ng-deep .fc-button {
+  background-color: #0a3d62; /* اللون الأساسي */
+  border: none;
+  color: white;
+  border-radius: 6px;
+  padding: 5px 10px;
+}
+:host ::ng-deep .fc-button:hover {
+  background-color: #0a3d62;
+}
+
+:host ::ng-deep .fc-event {
+  border-radius: 6px !important;
+  padding: 4px !important;
+  font-size: 12px !important;
+  border: none !important;
+}
+
+:host ::ng-deep .fc-timegrid-slot {
+  height: 60px !important;
+}
+
+.create-btn {
+  background-color:#0a3d62;
+  color: white;
+  border: none;
+  width:200px;
+  height: 45px;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.create-btn:hover {
+  background-color: rgb(80, 123, 167);
+}
+

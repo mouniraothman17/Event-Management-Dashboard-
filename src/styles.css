@@ -1,0 +1,12 @@
+:root {
+  --primary-color: #0a3d62;
+  --bg-color: #f4f6f8;
+  --card-color: #ffffff;
+  --gray-color:rgba(245, 245, 245, 1);
+}
+body{
+  background-color: #f4f6f8;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

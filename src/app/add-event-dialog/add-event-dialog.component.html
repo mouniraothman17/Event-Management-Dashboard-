@@ -1,0 +1,108 @@
+<h2 mat-dialog-title>Add an Event</h2>
+
+<mat-dialog-content class="dialog-body">
+  <form #form="ngForm">
+
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Event name</mat-label>
+      <input matInput [(ngModel)]="event.name" name="name" required #name="ngModel">
+      <mat-error class="error-msg" *ngIf="name.invalid && name.touched">
+        Event name is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Description</mat-label>
+      <textarea matInput rows="2" [(ngModel)]="event.description" name="description" required #desc="ngModel"></textarea>
+      <mat-error class="error-msg" *ngIf="desc.invalid && desc.touched">
+        Description is required
+      </mat-error>
+    </mat-form-field>
+
+
+
+   <input
+  type="file"
+  #fileInput
+  hidden
+  (change)="onImageSelected($event)"
+/>
+
+<button
+  type="button"
+  mat-raised-button
+  class="upload-btn"
+  (click)="fileInput.click()">
+  Upload Image
+</button>
+
+
+
+    <div class="event-type">
+      <button mat-mini-fab [color]="event.interest === 'sport' ? 'primary' : ''" (click)="event.interest='sport'"><img src="../../assets/football.png" alt=""></button>
+      <button mat-mini-fab [color]="event.interest === 'music' ? 'primary' : ''" (click)="event.interest='music'"><img src="../../assets/music.png" alt=""></button>
+      <button mat-mini-fab [color]="event.interest === 'art' ? 'primary' : ''" (click)="event.interest='art'"><img src="../../assets/palette.png" alt=""></button>
+      <button mat-mini-fab [color]="event.interest === 'food' ? 'primary' : ''" (click)="event.interest='food'"><img src="../../assets/burger-alt (1).png" alt=""></button>
+    </div>
+    <div class="error-msg" *ngIf="!event.interest && form.submitted">
+      Please select an event type
+    </div>
+
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Date</mat-label>
+      <input matInput type="date" [(ngModel)]="event.date" name="date" required #date="ngModel">
+      <mat-error class="error-msg" *ngIf="date.invalid && date.touched">
+        Date is required
+      </mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Time</mat-label>
+      <input matInput type="time" [(ngModel)]="event.time" name="time" required #time="ngModel">
+      <mat-error class="error-msg" *ngIf="time.invalid && time.touched">
+        Time is required
+      </mat-error>
+    </mat-form-field>
+
+
+    <div class="location-section">
+      <h4>Select Location</h4>
+      <div id="map" class="map"></div>
+      <p *ngIf="event.location">📍 Lat: {{ event.location.lat }}, Lng: {{ event.location.lng }}</p>
+      <div class="error-msg" *ngIf="!event.location && form.submitted">
+        Please select a location on the map
+      </div>
+    </div>
+
+
+    <div class="price-section">
+      <button mat-mini-fab (click)="decreasePrice()">-</button>
+      <mat-form-field appearance="outline" class="price-input">
+        <mat-label>Price</mat-label>
+        <input matInput type="number" [(ngModel)]="event.price" name="price" required min="1" #price="ngModel">
+        <mat-error class="error-msg" *ngIf="price.invalid && price.touched">
+          Price must be greater than 0
+        </mat-error>
+      </mat-form-field>
+      <button mat-mini-fab (click)="increasePrice()">+</button>
+    </div>
+
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Tickets</mat-label>
+      <input matInput type="number" [(ngModel)]="event.tickets" name="tickets" required min="1" #tickets="ngModel">
+      <mat-error class="error-msg" *ngIf="tickets.invalid && tickets.touched">
+        Number of tickets is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-dialog-actions align="end">
+      <button mat-button (click)="onCancel()">Cancel</button>
+      <button mat-raised-button color="primary" (click)="onCreate(form)">Create Event</button>
+    </mat-dialog-actions>
+
+  </form>
+</mat-dialog-content>

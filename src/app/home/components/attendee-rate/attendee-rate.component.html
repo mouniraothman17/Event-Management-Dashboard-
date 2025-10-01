@@ -1,0 +1,25 @@
+<div class="attendee-rate-card">
+  <div class="chart-header">
+    <h3>
+      {{ fromHome ? 'Users Activity Rate' : 'Attendee Rate' }}
+    </h3>
+    <span>This year</span>
+  </div>
+
+  <div class="content">
+    <canvas baseChart
+      [data]="doughnutChartData"
+      [type]="doughnutChartType"
+      [options]="doughnutChartOptions">
+    </canvas>
+
+    <div class="info" style="text-align: center;">
+      <h2 style="margin: 0; font-size: 36px; font-weight: 400;">
+        {{ attendeeRate }}%
+      </h2>
+      <p style="margin: 0; font-size: 14px;">
+        {{ fromHome ? 'Users who created events' : 'Attended event' }}
+      </p>
+    </div>
+  </div>
+</div>

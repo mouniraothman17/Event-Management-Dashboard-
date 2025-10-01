@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="login-container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <h2>Login</h2>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          placeholder="Enter your email"
+          [class.invalid]="(submitted || f['email'].touched) && f['email'].invalid"
+        />
+        <div class="error" *ngIf="(submitted || f['email'].touched) && f['email'].errors">
+          <span *ngIf="f['email'].errors['required']">Email is required</span>
+          <span *ngIf="f['email'].errors['email']">Invalid email format</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div style="position: relative;">
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            id="password"
+            formControlName="password"
+            placeholder="Enter your password"
+            [class.invalid]="(submitted || f['password'].touched) && f['password'].invalid"
+          />
+          <span
+            (click)="togglePasswordVisibility()"
+            style="position: absolute; right: 10px; cursor: pointer; display: flex; align-items: center;"
+          >
+            <svg class="eye-button" *ngIf="!showPassword" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" fill="gray">
+              <path d="M12 4.5C7 4.5 2.7 8.2 1 12c1.7 3.8 6 7.5 11 7.5s9.3-3.7 11-7.5C21.3 8.2 17 4.5 12 4.5zm0 12c-2.5 0-4.5-2-4.5-4.5S9.5 7.5 12 7.5 16.5 9.5 16.5 12 14.5 16.5 12 16.5z"/>
+              <circle cx="12" cy="12" r="2.5"/>
+            </svg>
+            <svg class="eye-button" *ngIf="showPassword" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" fill="gray">
+              <path d="M12 6.5c3.78 0 7.1 2.19 8.64 5.5-.51 1.12-1.26 2.14-2.16 2.96l1.41 1.41C21.27 14.46 22.17 13.28 23 12c-1.7-3.8-6-7.5-11-7.5-1.4 0-2.73.24-3.97.68l1.55 1.55c.76-.18 1.56-.28 2.42-.28zm-9.19-4.9L1.39 3.91 4.69 7.2C3.13 8.63 1.91 10.23 1 12c1.7 3.8 6 7.5 11 7.5 2.01 0 3.91-.51 5.58-1.4l3.12 3.12 1.41-1.41L2.81 1.59zM12 17.5c-3.78 0-7.1-2.19-8.64-5.5.62-1.35 1.57-2.53 2.71-3.48l1.53 1.53C7.23 10.65 7 11.31 7 12c0 2.5 2 4.5 4.5 4.5.69 0 1.35-.23 1.95-.6l1.53 1.53c-.95 1.14-2.13 2.09-3.48 2.71zM9.54 10.3l4.16 4.16c-.21.09-.43.14-.66.14-1.38 0-2.5-1.12-2.5-2.5 0-.23.05-.45.14-.66z"/>
+            </svg>
+          </span>
+        </div>
+        <div class="error" *ngIf="(submitted || f['password'].touched) && f['password'].errors">
+          <span *ngIf="f['password'].errors['required']">Password is required</span>
+          <span *ngIf="f['password'].errors['minlength']">Password must be at least 8 characters</span>
+        </div>
+      </div>
+
+      <div *ngIf="serverError" class="error-message">
+        {{ serverError }}
+      </div>
+
+      <button type="submit" class="login-button">
+        {{ loading ? 'Logging in...' : 'Login' }}
+      </button>
+    </form>
+  </div>

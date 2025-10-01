@@ -1,0 +1,41 @@
+<div class="events-section">
+<div class="container">
+  <div class="title">Ongoing Events</div>
+
+  <div class="event" *ngFor="let event of eventsPre">
+    <div class="thumbnail">
+      <img [src]="event.image" alt="{{ event.name }}" />
+    </div>
+    <div class="details">
+      <div class="name">{{ event.name }}</div>
+      <div class="time">{{ event.date | date: 'medium' }}</div>
+    </div>
+    <div class="attendees">
+      {{ event.attendees }}
+      <span>attendees</span>
+    </div>
+  </div>
+</div>
+
+
+
+  <div class="container">
+    <div class="title">Upcoming Events</div>
+
+ <div *ngFor="let event of events" class="event">
+  <div class="thumbnail">
+    <img [src]="event.image" alt="Event image" />
+  </div>
+  <div class="details">
+    <div class="name">{{ event.name }}</div>
+  </div>
+  <div class="attendees">
+    {{ event.attendees }}
+    <span>attendees</span>
+  </div>
+</div>
+
+
+  </div>
+
+</div>

@@ -1,0 +1,11 @@
+mat-dialog-content {
+  font-size: 16px;
+  color: #333;
+}
+
+button {
+  min-width: 80px;
+}
+h2{
+  color: rgb(16, 16, 150);
+}

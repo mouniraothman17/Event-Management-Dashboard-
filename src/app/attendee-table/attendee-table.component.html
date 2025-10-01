@@ -1,0 +1,40 @@
+<div class="header-container">
+  <div class="date-search">
+    <div class="date">{{ currentDate | date:'MMM d, y' }}</div>
+
+    <div class="search-wrapper">
+      <input class="search-input"
+             type="text"
+             placeholder="Search..."
+             [formControl]="searchControl">
+      <span><img class="search-icon" src="../../../assets/search.png" alt=""></span>
+    </div>
+  </div>
+</div>
+
+<app-sidebar></app-sidebar>
+
+<div class="full-container">
+  <h3>All Attendees List</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone no</th>
+        <th>Event</th>
+        <th>Date</th>
+        <th>Seats</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let attendee of attendees">
+        <td>{{ attendee.name }}</td>
+        <td>{{ attendee.phone }}</td>
+        <td>{{ attendee.event }}</td>
+        <td>{{ attendee.bookedDate }}</td>
+        <td>{{ attendee.seats }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
